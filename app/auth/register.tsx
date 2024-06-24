@@ -1,17 +1,17 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, TextInput, FlatList } from "react-native";
-import {Image} from "expo-image";
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { LinearGradient } from 'expo-linear-gradient';
 import {useState} from "react"
+import {useRouter} from "expo-router"
 
 
 export default function Register(){
     const[username, setUsername] = useState("");
     const[phone, setPhone] = useState("");
     const[password, setPassword] = useState("");
+    const router = useRouter();
 
     const googleAuthHandler = () => {
         // set up google auth
+        router.push("(tabs)")
     }
 
     return(

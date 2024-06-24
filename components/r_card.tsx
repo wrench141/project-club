@@ -1,10 +1,12 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, TextInput, FlatList } from "react-native";
 import {Image} from "expo-image";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import {useRouter} from "expo-router"
 
 export default function Rcard(){
+    const router = useRouter();
     return(
-        <TouchableOpacity activeOpacity={0.6} style={styles.card}>
+        <TouchableOpacity onPress={() => router.push("/restobars/radission")} activeOpacity={0.9} style={styles.card}>
             <Image style={styles.cImage} source={require("../assets/images/restaurent.png")} />
             <Text style={[styles.topTitle, {fontSize: 19, marginTop: 10}]}>
                 Radisson Blu
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 120,
         borderRadius: 10,
-        resizeMode: "cover",
+        contentFit: "cover",
     },
     stars: {
         width: "auto",
